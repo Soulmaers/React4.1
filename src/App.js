@@ -2,24 +2,19 @@ import React from 'react'
 import './App.css';
 
 import Form from './components/Form.js'
-
+import hexToRGB from './components/utils/HexToRGB'
 function App() {
 
   const color = {
     hex: '',
-    rgb: ''
+    rgb: '',
+    backgroundColor: '#b0acac'
   }
 
-  function hexToRGB(hex) {
-    var result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
-    return result ? {
-      r: parseInt(result[1], 16),
-      g: parseInt(result[2], 16),
-      b: parseInt(result[3], 16)
-    } : null;
-  }
+  return (
 
-  return <> <Form color={color} hexToRGB={hexToRGB} /></>
+    <Form color={color} hexToRGB={hexToRGB} />
+  )
 
 }
 
